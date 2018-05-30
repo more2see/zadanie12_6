@@ -16,7 +16,7 @@ function showCountriesList(resp) {
 	countriesList.empty();
 	resp.forEach(function(item) {
 		$('<li>').text(item.name).appendTo(countriesList);
-		$('<li>').text(item.capital).appendTo(countriesList);
+		$('<ul>').text(item.capital).appendTo(countriesList);
 	});
 }
 /* Nie działa dodawanie do zagnieżdżonej listy nazwy stolicy 
