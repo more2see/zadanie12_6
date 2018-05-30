@@ -11,22 +11,14 @@ function searchCountries() {
 		success: showCountriesList
 	});
 }
-
 function showCountriesList(resp) {
 	countriesList.empty();
 	resp.forEach(function(item) {
-		$('<li>').text(item.name).appendTo(countriesList);
-		$('<ul>').text(item.capital).appendTo(countriesList);
+		var countryName = $('<li>').text(item.name);
+		var countryCapital = $('<li>').text(item.capital);
+		var list = $('<ul>');
+		countryCapital.appendTo(list);
+		list.appendTo(countryName);
+		countryName.appendTo(countriesList);
 	});
 }
-/* Nie działa dodawanie do zagnieżdżonej listy nazwy stolicy 
-var lowerCountriesList = $('#lower-list');
-function showCountriesList(resp) {
-    countriesList.empty();
-    lowerCountriesList.empty();
-   resp.forEach(function(item){
-   	$('<li>').text(item.name).appendTo(countriesList);
-   	$('<li>').text(item.capital).appendTo(lowerCountriesList);
-});
-}
-*/
